@@ -1,0 +1,1075 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Arial';
+}
+
+html
+{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.nav
+{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    height: 70px;
+    /* border: 1px solid red; */
+    justify-content: center;
+    align-items: center;
+    /* background: white; */
+    z-index: 100;
+    background: white; 
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1)
+}
+
+.nav .nav-bar
+{
+    width: 80%;
+    /* border: red 1px solid; */
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav .nav-bar a
+{
+    text-decoration: none;
+}
+
+.nav .nav-links
+{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    transition: all ease .5s;
+    /* border: 1px solid red; */
+}
+
+.nav .nav-links a
+{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    position: relative;
+}
+
+.nav .nav-links a::before
+{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: all ease .5s;
+    background: black;
+}
+
+.nav .nav-links a:hover::before
+{
+    width: 100%;
+}
+
+.nav .nav-bar h2
+{
+    font-size: 34px;
+    color: #000;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav .responsiveBtn
+{
+    display: none;
+}
+
+main section
+{
+    width: 100%;
+    height: 100vh;
+    padding-top: 4.5rem;
+}
+
+main #profile
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #profile .profile-container
+{
+    width: 80%;
+    height: 90%;
+    /* border: 1px solid burlywood; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+main #profile .profile-container .profile-context
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    /* border: 1px solid red; */
+    position: relative;
+    animation:textAnimation 3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+main #profile .profile-container .profile-context p, h2
+{
+    width: 100%;
+    line-height: 21px;
+}
+
+main #profile .profile-container .profile-context h2
+{
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+main #profile .profile-container .profile-context p
+{
+    font-size: 20px;
+}
+
+main #profile .profile-container .profile-picture
+{   
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #profile .profile-container .profile-picture .img
+{   
+    width: 70%;
+    height: 80%;
+    border-radius: 50%;
+    background-image: url('profile-1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation:popIn 2s ease;
+}
+
+.profile-picture .img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:inherit ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.profile-picture .img:hover::after {
+    opacity: 1;
+}
+
+.profile-picture .img::before
+{
+    position: absolute;
+    content: 'I am WebDev';
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    color: white;
+    opacity: 0;
+    transition: all ease .5s;
+    z-index: 2;
+}
+
+.profile-picture .img:hover::before
+{
+    opacity: 1;
+    height: 20%;
+}
+
+main #profile .profile-container .buttons-social
+{
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 18%;
+    left:0;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main #profile .profile-container .buttons-social a i
+{
+    font-size: 34px;
+    cursor: pointer;
+    transition: all .5s ease;
+    color: black;
+    border-radius: 2px;
+}
+
+.buttons-social a i:hover
+{
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+main #skills
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #skills .skill-container
+{
+    width: 60%;
+    height: 90%;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+main #skills .skill-container .skill-picture
+{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, gray, black);
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    border-radius: 10px;
+    animation: popIn 2s ease;
+}
+
+main #skills .skill-container .skill-profile-pic
+{
+    width: 35%;
+    height: 30%;
+    background-image: url('profile-1.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 5px;
+}
+
+main #skills .skill-container .about-me
+{
+    margin-top: 2rem;
+}
+
+main #skills .skill-container .about-me p
+{
+    margin-top: 10px;
+}
+
+main #skills .skill-container .programming-skill
+{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 2s ease;
+    /* border: 1px solid red; */
+}
+
+main #skills .skill-container .programming-skill h2
+{
+    font-size: 44px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+main #skills .skill-container .skills-flex
+{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main #skills .skill-container .skills-flex .skill-content
+{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid red; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+main #skills .skill-container .skill-content span
+{
+    width: 70%;
+    background: black;
+    height: 16px;
+    border-radius: 25px;
+    position: relative;
+}
+
+.skill-content .html::before
+{
+    position: absolute;
+    content: '';
+    width: 92%;
+    background: burlywood;
+    height: 100%;
+    border-radius: 25px;
+    animation: fullLength 10s ease;
+}
+
+.skill-content .css::before
+{
+    position: absolute;
+    content: '';
+    width: 90%;
+    background: burlywood;
+    height: 100%;
+    border-radius: 25px;
+    animation: fullLength 10s ease;
+}
+
+.skill-content .js::before
+{
+    position: absolute;
+    content: '';
+    width: 87%;
+    background: burlywood;
+    height: 100%;
+    border-radius: 25px;
+    animation: fullLength 10s ease;
+}
+
+.skill-content .java::before
+{
+    position: absolute;
+    content: '';
+    width: 56%;
+    background: burlywood;
+    height: 100%;
+    border-radius: 25px;
+    animation: fullLength 10s ease;
+}
+
+main #skills .skill-container .skill-content p
+{
+    font-size: 18px;
+    width: 10%;
+}
+
+main #skills .skill-container .programming-skill .boxes-skills
+{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 20%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: end;
+}
+
+main #skills .skill-container .boxes-skills div
+{
+    width: 100%;
+    height: 100%;
+    background: black;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    animation: fullLength 2s ease;
+    transition: all ease .5s;
+    box-shadow: inset 0 0 0 burlywood;
+}
+
+main #skills .skill-container .boxes-skills div:hover
+{
+    box-shadow: inset 0 -200px 0 burlywood;    
+    color: black;
+}
+
+main #projects
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main #projects .project-container
+{
+    width: 60%;
+    height: 80%;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6); */
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    /* padding: 20px; */
+}
+
+main #projects .project-container .project-boxes
+{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    position: relative;
+    transition: all ease .5s;
+}
+
+main #projects .project-container .box1
+{
+    background-image: url("wallpaperflare.com_wallpaper\ \(2\).jpg");
+    background-size: cover;
+    background-position: center;
+    animation: transform 2s ease;
+}
+
+main #projects .project-container .box2
+{
+    background-image: url("segbin.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: transform 2.5s ease forwards;
+    animation-delay: .5s;
+    opacity: 0;
+}
+
+main #projects .project-container .box3
+{
+    background-image: url("Screenshot\ \(70\).png");
+    background-size: cover;
+    background-position: center;
+    animation: transform 2.5s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+main #projects .project-container .box4
+{
+    background-image: url("iris.png");
+    background-size: cover;
+    background-position: center;
+    animation: transform 2.5s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
+}
+
+main #projects .project-container .project-boxes .inner-project-box
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: #fff;
+    color: #000;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    justify-content: space-between;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.6);
+}
+
+main #projects .project-container .project-boxes:hover
+{
+    transform: translate(-5px);
+    box-shadow: 10px 10px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+main #projects .project-container .inner-project-box p
+{
+    font-size: 12px;
+}
+
+main #contact
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main #contact .contact-container
+{
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+
+main #contact .contact-container .lets-chat-container
+{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main #contact .contact-container .lets-chat-container .chat-context
+{
+    /* border: 1px solid red; */
+    width: 90%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main #contact .contact-container .chat-context h2
+{   
+    font-size: 34px;
+    line-height: 2rem;
+}
+
+main #contact .contact-container .lets-chat-container .contact-mail
+{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    display: flex;
+    width: 70%;
+    margin-top: 20px;
+    align-items: center;
+    padding: 10px;
+}
+
+main #contact .contact-container .lets-chat-container .contact-mail i
+{
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.6);
+    height: 90%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    color: gray;
+}
+
+main #contact .contact-container .lets-chat-container .contact-mail .mail-container
+{
+    padding-left: 10px;
+}
+
+main #contact .contact-container .form
+{
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main #contact .contact-container .form form
+{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    justify-content: space-between;
+}
+
+main #contact .contact-container .form form .contact-fill-up
+{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main #contact .contact-container .form form .contact-fill-up input
+{
+    height: 25%;
+    border-radius: 5px;
+    background: rgb(224, 224, 224);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+main #contact .contact-container .form form .contact-text-area
+{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+main #contact .contact-container .form form .contact-text-area textarea
+{
+    height: 50%;
+    border: none;
+    background: rgb(224, 224, 224);
+    resize: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+main #contact .contact-container .form form .contact-text-area .send-message
+{
+    width: 40%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: all .5s ease;
+    margin-top: 20px;
+}
+
+main #contact .contact-container .form form .contact-text-area .send-message:hover
+{
+    transform: translateY(-5px);
+    box-shadow: 3px 3px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity:1;}
+}
+
+@keyframes fullLength {
+    from{width: 0;}
+}
+
+@keyframes textAnimation {
+    from{
+        width: 0;
+        opacity: 0;
+    }
+    to{
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from{
+        scale: 0;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes transform {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 850px) {
+    .nav .nav-bar
+    {
+        position: relative;
+    }
+
+    .nav .nav-links {
+        flex-direction: column;
+        background: black;
+        height: 200px;
+        justify-content: space-around;
+        transform: translate(4000px, 65px);
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+        opacity: 0;
+    }
+
+    .nav .nav-links a
+    {
+        color: white;
+    }
+
+    .nav .nav-links a::before
+    {
+        background: white;
+    }
+    
+    .nav-links::after, 
+    .nav-links::before {
+        position: absolute;
+        content: '';
+        width: 5px;
+        height: 24px;
+        background: white;
+        top: 10px;
+        right: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-links::after {
+        transform: rotate(45deg);
+    }
+    
+    .nav-links::before {
+        transform: rotate(-45deg);
+    }
+    
+    .nav-bar .active
+    {
+        transform: translate(90px, 65px);
+        opacity: 1;
+    }
+
+    .nav .responsiveBtn
+    {
+        display: block;
+        height: 50%;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;     
+        cursor: pointer;
+        border: none;
+    }
+
+    .nav .responsiveBtn span
+    {
+        width: 100%;
+        height: 10px;
+        background: black;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    main #profile .profile-container
+    {
+        width: 80%;
+        height: 90%;
+        /* border: 1px solid burlywood; */
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    main #profile .profile-container .profile-picture .img
+    {
+        width: 30%;
+        height: 70%;
+    }
+
+    main #profile .profile-container .profile-context
+    {
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+    }
+
+    main #profile .profile-container .profile-context p, h2
+    {
+        line-height: 21px;
+        text-align: center;
+    }
+
+    main #profile .profile-container .buttons-social
+    {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .profile-picture .img::before
+    {
+        font-size: 11px;
+    }
+    main #projects .project-container .project-boxes .inner-project-box
+    {
+        height: 60%;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:1200px) {
+    main #skills .skill-container
+    {
+        width: 60%;
+        height: 90%;
+        /* border: 1px solid red; */
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    main #skills .skill-container .skill-picture
+    {
+        height: 50%;
+        /* border: 1px solid red; */
+        padding: 20px;
+        position: relative;
+    }
+
+    main #skills .skill-container .skill-picture .about-me p
+    {
+        font-size: 14px;
+    }
+
+    main #skills .skill-container .programming-skill .boxes-skills
+    {
+        /* border: 1px solid red; */
+        gap: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    main #skills .skill-container .programming-skill .boxes-skills div
+    {
+        /* border: 1px solid red; */
+        width: 23%;
+        font-size: 11px;
+    }
+
+    main #skills .skill-container .programming-skill h2
+    {
+        font-size: 34px;
+        margin-top: 10px;
+        /* border: 1px solid red; */
+    }
+
+    main #skills .skill-container .skill-profile-pic
+    {
+        display: none;
+    }
+
+    main #skills .skill-container .about-me
+    {
+        margin-top: 0;
+        /* border: 1px solid red; */
+    }
+
+    main #skill .about:hover
+    {
+        backdrop-filter: blur(10px);
+    }
+
+    main #skills .skill-container .skill-picture::before
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-image:url("/Images/profile-1.jpg") ;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: height 0.5s ease;
+        border-radius: 10px;
+    }
+
+    main #skills .skill-container .skill-picture:hover::before
+    {
+        height: 100%;
+    }
+
+    main #skills .skill-container .skill-content span
+    {
+        height: 11px;
+    }
+
+    main #skills .skill-container .skill-content p
+    {
+        font-size: 16px;
+        width: 10%;
+    }
+    
+    main #skills .skill-container .skills-flex
+    {
+        justify-content: start;
+    }
+
+    main #contact .contact-container
+    {
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid red; */
+        height: 100%;
+        padding: 10px;
+        width: 90%;
+    }
+
+    main #contact .contact-container .lets-chat-container
+    {
+        justify-content: start;
+        /* border: 1px solid red; */
+        height: 70%;
+    }
+
+    main #contact .contact-container .chat-context
+    {
+        /* border: 1px solid red; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    main #contact .contact-container .chat-context h2
+    {
+        font-size: 24px;
+        line-height: 1.2rem;
+    }
+
+    main #contact .contact-container .form form
+    {
+        height: 100%;
+        padding: 10px;
+    }
+
+    main #contact .contact-container .form form .contact-text-area .send-message
+    {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    main #contact .contact-container .form form .contact-fill-up input
+    {
+        height: 30%;
+    }
+}
+
+@media screen and (min-width:150px) and (max-width:1200px){
+    
+    main #contact .contact-container
+    {
+        display: flex;
+        flex-direction: column;
+        /* border: 1px solid red; */
+        height: 100%;
+        padding: 10px;
+    }
+
+    main #contact .contact-container .lets-chat-container
+    {
+        justify-content: start;
+        /* border: 1px solid red; */
+        height: 70%;
+    }
+
+    main #contact .contact-container .chat-context
+    {
+        /* border: 1px solid red; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    main #contact .contact-container .chat-context h2
+    {
+        font-size: 24px;
+        line-height: 1.2rem;
+    }
+
+    main #contact .contact-container .form form
+    {
+        height: 100%;
+        padding: 10px;
+    }
+
+    main #contact .contact-container .form form .contact-text-area .send-message
+    {
+        width: 50%;
+        margin-top: 10px;
+    }
+
+    main #contact .contact-container .form form .contact-fill-up input
+    {
+        height: 30%;
+    }
+
+    main #projects .project-container
+    {
+        width: 90%;
+    }
+
+    main #skills .skill-container
+    {
+        width: 90%;
+    }
+
+    main #profile .profile-container
+    {
+        width: 90%;
+    }
+
+    main #profile .profile-container .profile-context p, h2
+    {
+        width: 100%;
+        line-height: 21px;
+    }
+
+    main #profile .profile-container .profile-context h2
+    {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    main #profile .profile-container .profile-context p
+    {
+        font-size: 18px;
+    }
+}
